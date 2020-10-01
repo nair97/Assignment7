@@ -7,13 +7,13 @@ Created on Wed Sep 23 15:17:44 2020
 """
 
 import pandas as pd
-if __name__ == '__main__': 
-   import matplotlib.pyplot as plt
-   import cartopy.crs as ccrs
-   import cartopy.feature as cfeature
-   import matplotlib.cm as cm
-   from mpl_toolkits.axes_grid1 import ImageGrid
-   from cartopy.mpl.geoaxes import GeoAxes
+#if __name__ == '__main__': 
+import matplotlib.pyplot as plt
+import cartopy.crs as ccrs
+import cartopy.feature as cfeature
+#import matplotlib.cm as cm
+from mpl_toolkits.axes_grid1 import ImageGrid
+from cartopy.mpl.geoaxes import GeoAxes
 
 def read_station_info( fileName ):
      # reading the station info csv txt
@@ -165,6 +165,7 @@ for sidx, ax in enumerate(grid):
         ax.add_feature(cfeature.BORDERS)
         ax.add_feature(cfeature.STATES)
         ax.set_extent([lon1, lon2, lat1, lat2], crs=ccrs.PlateCarree())
+        
         #draw plot of 4 seasons    
         p = grid[sidx].scatter(x=annualAvg.Lon, y=annualAvg.Lat,
                        c=(season[sidx].values),cmap='jet', s=75, 
