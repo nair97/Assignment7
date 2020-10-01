@@ -82,7 +82,7 @@ def compute_average_moisture_by_station( DataDF, MetaDF ):
          newMetaDF.loc[i, 'Fall Total VWC (%)'] = fallTWC.mean()
          
          #return dataframe
-         return newMetaDF
+    return newMetaDF
         
 # the following condition checks whether we are running as a script, in which 
 # case run the test code, otherwise functions are being imported so do not.
