@@ -37,7 +37,7 @@ def read_station_data( fileName ):
 
 def compute_total_moisture( DataDF ):
       # read soil moisture data columns
-    soilmoistcol = DataDF.columns[ : DataDF.shape[1]-2]    
+    soilmoistcol = DataDF.columns[1:]    
     
     #Sum the soil moisture per soil column for finding total water depth in mm
     DataDF['Total Water Depth (mm)'] = DataDF[soilmoistcol].sum(axis=1) 
@@ -97,11 +97,11 @@ if __name__ == '__main__':
  from cartopy.mpl.geoaxes import GeoAxes
 
     # Open and read the contents of the metadata file
-stnInfoFileName = 'ill-station-info.csv'
+stnInfoFileName = 'datasets/ill-station-info.csv'
 stnInfo = read_station_info( stnInfoFileName )
     
     # Open and read the contents of the data file
-stationDataFileName = 'ill-soilmoist-data.txt'
+stationDataFileName = 'datasets/ill-soilmoist-data.txt'
 stationData = read_station_data( stationDataFileName )
     
     # Compute total soil column soil moisture
